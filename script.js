@@ -1,9 +1,9 @@
 (() => {
-  const WEDDING_ISO = '2026-08-26T20:00:00+03:00';
+  const WEDDING_ISO = '2026-10-07T20:00:00+03:00';
   const WEDDING_DATE = new Date(WEDDING_ISO);
-  const VENUE_NAME = 'دار المركبات قاعة لادونا';
-  const VENUE_URL = 'https://maps.app.goo.gl/mhajKhsz1Y8phzv29?g_st=iw';
-  const SHARE_TEXT = 'يسعدنا دعوتكم لحضور حفل زفاف إسلام و آية — الاربعاء ٢٦ أغسطس ٢٠٢٦ الساعة الثامنة مساءا في دار المركبات قاعة لادونا. التفاصيل: ';
+  const VENUE_NAME = 'قاعة لازوردي، القناطر الخيرية';
+  const VENUE_URL = 'https://www.google.com/maps/place/Lazurde+Wedding+Hall/@30.1867783,31.1392085,17z';
+  const SHARE_TEXT = 'يسعدنا دعوتكم لحضور حفل زفاف مصطفى و منة الله — الأربعاء ٧ أكتوبر ٢٠٢٦ الساعة الثامنة مساءً في قاعة لازوردي بالقناطر الخيرية. التفاصيل: ';
 
   /* ===================== COUNTDOWN ===================== */
   const els = {
@@ -103,7 +103,7 @@
 
   document.getElementById('share-native').addEventListener('click', async () => {
     const shareData = {
-      title: 'إسلام و آية — ٢٦ أغسطس ٢٠٢٦',
+      title: 'مصطفى و منة الله — ٧ أكتوبر ٢٠٢٦',
       text: SHARE_TEXT,
       url: pageUrl(),
     };
@@ -144,8 +144,8 @@
     const start = new Date(WEDDING_ISO);
     const end = new Date(start.getTime() + 4 * 60 * 60 * 1000);
     const ics = buildIcs({
-      uid: `eslam-aya-${start.getTime()}@invite`,
-      title: "حفل زفاف إسلام و آية",
+      uid: `mostafa-menna-allah-${start.getTime()}@invite`,
+      title: "حفل زفاف مصطفى و منة الله",
       description: SHARE_TEXT + pageUrl(),
       location: VENUE_NAME,
       url: VENUE_URL,
@@ -154,7 +154,7 @@
     const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'eslam-aya.ics';
+    a.download = 'mostafa-menna-allah.ics';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -167,7 +167,7 @@
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Eslam & Aya//Wedding Invite//EN',
+      'PRODID:-//Mostafa & Menna Allah//Wedding Invite//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
