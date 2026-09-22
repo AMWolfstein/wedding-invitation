@@ -2,7 +2,7 @@
   const WEDDING_ISO = '2026-10-07T20:00:00+03:00';
   const WEDDING_DATE = new Date(WEDDING_ISO);
   const VENUE_NAME = 'قاعة لازوردي، القناطر الخيرية';
-  const VENUE_URL = 'https://www.google.com/maps/place/Lazurde+Wedding+Hall/@30.1867783,31.1392085,17z';
+  const VENUE_URL = 'https://maps.app.goo.gl/2Zz9VuNGiM7WeiSc6';
   const SHARE_TEXT = 'يسعدنا دعوتكم لحضور حفل زفاف مصطفى و منة الله — الأربعاء ٧ أكتوبر ٢٠٢٦ الساعة الثامنة مساءً في قاعة لازوردي بالقناطر الخيرية. التفاصيل: ';
 
   /* ===================== COUNTDOWN ===================== */
