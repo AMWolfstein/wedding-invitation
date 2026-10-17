@@ -1,9 +1,9 @@
 (() => {
-  const WEDDING_ISO = '2026-10-07T20:00:00+03:00';
+  const WEDDING_ISO = '2026-10-23T19:00:00+03:00';
   const WEDDING_DATE = new Date(WEDDING_ISO);
-  const VENUE_NAME = 'قاعة لازوردي، القناطر الخيرية';
-  const VENUE_URL = 'https://maps.app.goo.gl/2Zz9VuNGiM7WeiSc6';
-  const SHARE_TEXT = 'يسعدنا دعوتكم لحضور حفل زفاف مصطفى و منة الله — الأربعاء ٧ أكتوبر ٢٠٢٦ الساعة الثامنة مساءً في قاعة لازوردي بالقناطر الخيرية. التفاصيل: ';
+  const VENUE_NAME = 'مسجد المهند، الرحاب';
+  const VENUE_URL = 'https://maps.app.goo.gl/3tJyJcZiLtVGyHB2A?g_st=aw';
+  const SHARE_TEXT = 'يسعدنا دعوتكم لحضور حفل زفاف هاني و رضوي — الجمعة ٢٣ أكتوبر ٢٠٢٦ من الساعة السابعة حتى التاسعة مساءً في مسجد المهند بالرحاب. التفاصيل: ';
 
   /* ===================== COUNTDOWN ===================== */
   const els = {
@@ -103,7 +103,7 @@
 
   document.getElementById('share-native').addEventListener('click', async () => {
     const shareData = {
-      title: 'مصطفى و منة الله — ٧ أكتوبر ٢٠٢٦',
+      title: 'هاني و رضوي — ٢٣ أكتوبر ٢٠٢٦',
       text: SHARE_TEXT,
       url: pageUrl(),
     };
@@ -142,10 +142,10 @@
   /* ===================== CALENDAR (.ics) ===================== */
   document.getElementById('add-calendar').addEventListener('click', () => {
     const start = new Date(WEDDING_ISO);
-    const end = new Date(start.getTime() + 4 * 60 * 60 * 1000);
+    const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
     const ics = buildIcs({
-      uid: `mostafa-menna-allah-${start.getTime()}@invite`,
-      title: "حفل زفاف مصطفى و منة الله",
+      uid: `hany-radwa-${start.getTime()}@invite`,
+      title: "حفل زفاف هاني و رضوي",
       description: SHARE_TEXT + pageUrl(),
       location: VENUE_NAME,
       url: VENUE_URL,
@@ -154,7 +154,7 @@
     const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'mostafa-menna-allah.ics';
+    a.download = 'hany-radwa.ics';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -167,7 +167,7 @@
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Mostafa & Menna Allah//Wedding Invite//EN',
+      'PRODID:-//Hany & Radwa//Wedding Invite//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       'BEGIN:VEVENT',
